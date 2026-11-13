@@ -22,7 +22,6 @@ jobs:
             set -e
             cd /root/nibble_infra
             git pull --ff-only
-            docker compose pull
+            docker compose pull backend frontend db nginx
             docker compose up -d
             docker compose exec -T nginx nginx -t && docker compose exec -T nginx nginx -s reload
-            docker image prune -f
