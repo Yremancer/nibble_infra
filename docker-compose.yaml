@@ -13,6 +13,7 @@ services:
 
   frontend:
     image: ghcr.io/zetlock17/nibble-frontend:${FRONT_VERSION:-latest}
+    env_file: .env
     networks:
       - base
     restart: unless-stopped
